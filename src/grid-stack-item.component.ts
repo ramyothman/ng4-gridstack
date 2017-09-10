@@ -34,7 +34,7 @@ export class GridStackItemComponent implements OnInit, OnDestroy, AfterViewInit 
       if(item != null)
           this.option = item;
 
-
+      //this.renderer.setElementAttribute(this.nativeElement, "style", "margin-left:" + this.option.marginWidth + ";");
       //this.renderer.setElementAttribute(this.nativeElement, "data-gs-x", String(this.option.x));
       //this.renderer.setElementAttribute(this.nativeElement, "data-gs-y", String(this.option.y));
       //this.renderer.setElementAttribute(this.nativeElement, "data-gs-width", String(this.option.width));

@@ -11,6 +11,7 @@ export class GridStackItem {
     noResize: boolean = false;
     noMove: boolean;
     autoPosition: boolean = false;
+    marginWidth: string = "10px";
     locked: boolean;
     el: any;
     customId: string;

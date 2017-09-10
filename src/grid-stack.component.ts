@@ -31,6 +31,17 @@ export class GridStackComponent implements AfterContentInit {
       this.grid.resize(item.nativeElement, item.option.width, item.option.height);
       //console.log(item.option);
   };
+
+  public AddWidget(item: GridStackItemComponent) {
+      let widget = this.grid.makeWidget(item.nativeElement);
+      item.jGridRef = this.grid;
+      //item.jWidgetRef = widget;
+      if (item.option != null && item.option.noResize != null && item.option.noResize == true)
+          return;
+      this.grid.resizable(item.nativeElement, true);
+      this.grid.move(item.nativeElement, item.option.x, item.option.y);
+      this.grid.resize(item.nativeElement, item.option.width, item.option.height);
+  }
   ngAfterContentInit(): void {
       var that = this;
       let nativeElement = this.el.nativeElement;
@@ -44,7 +55,7 @@ export class GridStackComponent implements AfterContentInit {
       if (this.options.animate == null)
           this.options.animate = true;
       if (this.options.float == null)
-          this.options.float = true;
+          this.options.float = false;
       if (this.options.resizable == null)
           this.options.resizable = true;
       this.renderer.setElementAttribute(nativeElement, "data-gs-width", String(this.options.width));
