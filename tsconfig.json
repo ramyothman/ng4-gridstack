@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "target": "es5",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "types": []
+  }
+}

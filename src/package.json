@@ -1,0 +1,28 @@
+{
+  "name": "ng4-gridstack",
+  "version": "0.3.24",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramyothman/ng4-gridstack"
+  },
+  "author": {
+    "name": "Ramy Othman",
+    "email": "ramy.mostafa@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramyothman/ng4-gridstack/issues"
+  },
+  "main": "ng4-gridstack.umd.js",
+  "module": "ng4-gridstack.js",
+  "jsnext:main": "ng4-gridstack.js",
+  "typings": "ng4-gridstack.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
