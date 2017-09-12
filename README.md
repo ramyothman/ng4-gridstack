@@ -117,6 +117,13 @@ To lint all `*.ts` files:
 ```bash
 $ npm run lint
 ```
+## Credit
+
+I was looking for integrating cleanly the amazing gridstack.js (https://github.com/gridstack/gridstack.js) library with angular 4 and found this thread on stack overflow
+https://stackoverflow.com/questions/39901473/wrap-gridstack-js-into-angular-2-component
+Credit Goes to Answers from those users
+https://stackoverflow.com/users/3758236/user3758236
+https://stackoverflow.com/users/3112339/etchelon
 
 ## License
 
