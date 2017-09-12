@@ -47,7 +47,7 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<grid-stack class="grid-stack">
+<grid-stack class="grid-stack" [options]="options">
   <grid-stack-item [option]="widget1" class="grid-stack-item"  >
   </grid-stack-item>
   <grid-stack-item [option]="widget2" class="grid-stack-item" >
