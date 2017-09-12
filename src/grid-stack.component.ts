@@ -29,7 +29,6 @@ export class GridStackComponent implements AfterContentInit {
       this.grid.resizable(item.nativeElement, true);
       this.grid.move(item.nativeElement, item.option.x, item.option.y);
       this.grid.resize(item.nativeElement, item.option.width, item.option.height);
-      //console.log(item.option);
   };
 
   public AddWidget(item: GridStackItemComponent) {
@@ -45,9 +44,10 @@ export class GridStackComponent implements AfterContentInit {
   ngAfterContentInit(): void {
       var that = this;
       let nativeElement = this.el.nativeElement;
-
+      if (this.options == null)
+          this.options = new GridStackOptions();
       if (this.options.cellHeight == null)
-      this.options.cellHeight = "60px";
+        this.options.cellHeight = "60px";
       if (this.options.width == null)
           this.options.width = 12;
       if (this.options.height == null)
@@ -63,6 +63,7 @@ export class GridStackComponent implements AfterContentInit {
       
       this.gridStack = jQuery(nativeElement).gridstack(this.options);
       this.grid = this.gridStack.data("gridstack");
+
       this.gridStack.on("change", (e: any, items: any) => {
           _.each(items, (item: any) => this.widgetChanged(item));
       });
@@ -73,16 +74,6 @@ export class GridStackComponent implements AfterContentInit {
       // Initialize widgets
       this.items.forEach(item => that.makeWidget(item));
 
-      //// Also when they are rebound
-      //this.items
-      //    .changes
-      //    .subscribe((items: QueryList<GridStackItemComponent>) => {
-      //        if (!this.grid) {
-      //            _.delay(() => this.items.notifyOnChanges(), 50);
-      //            return;
-      //        }
-      //        items.forEach(item => that.makeWidget(item));
-      //    });
   }
 
   private widgetChanged(change: GridStackItem): void {

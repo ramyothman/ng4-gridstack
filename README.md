@@ -102,7 +102,7 @@ export class DashboardComponent implements OnInit {
       this.widgets.push(widget);
       this.cd.detectChanges();
       var arr = this.items.toArray();
-      this.gridStackMain.makeWidget(arr[this.items.length - 1]);
+      this.gridStackMain.AddWidget(arr[this.items.length - 1]);
   }
 }
 ```
