@@ -16,6 +16,9 @@ Once you have published your library to npm, you can import your library in any 
 $ npm install ng4-gridstack
 ```
 
+Then add reference to the gridstask.js and lodash to your index.html for how to do it check their site at 
+- https://github.com/gridstack/gridstack.js
+
 and then from your Angular `AppModule`:
 
 ```typescript
