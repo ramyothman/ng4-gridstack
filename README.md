@@ -55,6 +55,55 @@ Once your library is imported, you can use its components, directives and pipes 
 </grid-stack>
 ```
 
+If you want to dynamically generate widgets:
+
+```xml
+<!-- You can now use your library component in app.component.html -->  <grid-stack #gridStackMain id="gridStackMain" class="grid-stack" [options]="area">
+	<button (click)="AddWidget()">Add Widget</button>
+<grid-stack #gridStackMain id="gridStackMain" class="grid-stack" [options]="area">
+    <grid-stack-item *ngFor="let widget of widgets" id="widget-{{widget.ID}}" [option]="widget.Item" class="grid-stack-item">
+      <div class="widget-header">
+        <div class="widget-header-text">{{widget.Caption}}</div>
+      </div>
+      <div class="widget-content">
+        
+      </div>
+	</grid-stack-item>
+</grid-stack>
+```
+```typescript
+import { Component, OnInit, ViewChildren, QueryList, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { GridStackItem, GridStackOptions, GridStackItemComponent, GridStackComponent} from 'ng4-gridstack'
+
+@Component({
+  selector: 'app-grid-stack',
+  templateUrl: './app-grid-stack.component.html'
+})
+export class DashboardComponent implements OnInit {
+	@ViewChildren(GridStackItemComponent) items: QueryList<GridStackItemComponent>;
+    @ViewChild('gridStackMain') gridStackMain: GridStackComponent;
+	area: GridStackOptions = new GridStackOptions();
+    widgets: GridStackItem[] = [];
+	
+	constructor(private cd: ChangeDetectorRef) {
+      
+	}
+
+	AddWidget(widgetType: DashboardWidgetTypeEnum) {
+      var widget = new GridStackItem();
+      
+      widget.width = 6;
+      widget.height = 4;
+      widget.x = 0;
+      widget.y = 0;
+      this.widgets.push(widget);
+      this.cd.detectChanges();
+      var arr = this.items.toArray();
+      this.gridStackMain.makeWidget(arr[this.items.length - 1]);
+  }
+}
+```
+
 ## Development
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
