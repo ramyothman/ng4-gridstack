@@ -11,7 +11,6 @@ declare var _: any;
             </div>`
 })
 export class GridStackItemComponent implements OnInit, OnDestroy, AfterViewInit {
-    //@HostBinding("class") cssClass = "grid-stack-item";
     @ViewChild("contentPlaceholder", { read: ViewContainerRef }) contentPlaceholder: ViewContainerRef;
     @Input() contentTemplate: string;
     @Input() option: GridStackItem;

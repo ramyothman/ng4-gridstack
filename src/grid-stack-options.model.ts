@@ -9,7 +9,7 @@ export class GridStackOptions {
     disableDrag: boolean;
     disableResize: boolean;
     draggable: boolean;
-    gandle: string; //default: '.grid-stack-item-content'
+    handle: string; //default: '.grid-stack-item-content'
     handleClass: string;  //draggable handle class (e.g. 'grid-stack-item-content'). If set handle is ignored (default: null)
     height: number; //maximum rows amount. Default is 0 which means no maximum rows
     float: boolean; // enable floating widgets (default: false) 

@@ -11,7 +11,6 @@ declare var _: any;
   styles: [":host { display: block; }"]
 })
 export class GridStackComponent implements AfterContentInit {
-  //@HostBinding("class") cssClass = "grid-stack";
   @Input() options: GridStackOptions = new GridStackOptions();
   @ContentChildren(GridStackItemComponent) items: QueryList<GridStackItemComponent>;
   private gridStack: any = null;
@@ -40,6 +39,10 @@ export class GridStackComponent implements AfterContentInit {
       this.grid.resizable(item.nativeElement, true);
       this.grid.move(item.nativeElement, item.option.x, item.option.y);
       this.grid.resize(item.nativeElement, item.option.width, item.option.height);
+  }
+
+  public RemoveWidget(item: GridStackItemComponent) {
+      let widget = this.grid.removeWidget(item.nativeElement, false);
   }
   ngAfterContentInit(): void {
       var that = this;
