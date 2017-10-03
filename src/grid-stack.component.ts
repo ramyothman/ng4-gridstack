@@ -30,6 +30,12 @@ export class GridStackComponent implements AfterContentInit {
         this.grid.resize(item.nativeElement, item.option.width, item.option.height);
     };
 
+    updateWidget(item: GridStackItemComponent) {
+        this.grid.resizable(item.nativeElement, true);
+        this.grid.move(item.nativeElement, item.option.x, item.option.y);
+        this.grid.resize(item.nativeElement, item.option.width, item.option.height);
+    }
+
     public AddWidget(item: GridStackItemComponent) {
         let widget = this.grid.makeWidget(item.nativeElement);
         item.jGridRef = this.grid;

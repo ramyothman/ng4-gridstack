@@ -30,22 +30,25 @@ export class GridStackItemComponent implements OnInit, OnDestroy, AfterViewInit 
         this.RenderWidget(null);
     }
 
+    UpdateWidget(item: GridStackItem) {
+
+    }
     RenderWidget(item: GridStackItem) {
         let renderer = this.renderer;
         if (item != null)
             this.option = item;
 
-        //this.renderer.setElementAttribute(this.nativeElement, "style", "margin-left:" + this.option.marginWidth + ";");
-        //this.renderer.setElementAttribute(this.nativeElement, "data-gs-x", String(this.option.x));
-        //this.renderer.setElementAttribute(this.nativeElement, "data-gs-y", String(this.option.y));
-        //this.renderer.setElementAttribute(this.nativeElement, "data-gs-width", String(this.option.width));
-        //this.renderer.setElementAttribute(this.nativeElement, "data-gs-height", String(this.option.height));
-        //if (this.option.minWidth) {
-        //    renderer.setElementAttribute(this.nativeElement, "data-gs-min-width", String(this.option.minWidth));
-        //}
-        //if (this.option.noResize != null && this.option.noResize == true) {
-        //    renderer.setElementAttribute(this.nativeElement, "data-gs-no-resize", "yes");
-        //}
+        this.renderer.setElementAttribute(this.nativeElement, "style", "margin-left:" + this.option.marginWidth + ";");
+        this.renderer.setElementAttribute(this.nativeElement, "data-gs-x", String(this.option.x));
+        this.renderer.setElementAttribute(this.nativeElement, "data-gs-y", String(this.option.y));
+        this.renderer.setElementAttribute(this.nativeElement, "data-gs-width", String(this.option.width));
+        this.renderer.setElementAttribute(this.nativeElement, "data-gs-height", String(this.option.height));
+        if (this.option.minWidth) {
+            renderer.setElementAttribute(this.nativeElement, "data-gs-min-width", String(this.option.minWidth));
+        }
+        if (this.option.noResize != null && this.option.noResize == true) {
+            renderer.setElementAttribute(this.nativeElement, "data-gs-no-resize", "yes");
+        }
 
     }
 
