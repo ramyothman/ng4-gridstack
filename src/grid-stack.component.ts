@@ -1,7 +1,7 @@
 import { Component, QueryList, Input, ContentChildren, ElementRef, Renderer, AfterContentInit } from '@angular/core';
-import { GridStackOptions } from './grid-stack-options.model'
-import { GridStackItem } from './grid-stack-item.model'
-import { GridStackItemComponent } from './grid-stack-item.component'
+import { GridStackOptions } from './grid-stack-options.model';
+import { GridStackItem } from './grid-stack-item.model';
+import { GridStackItemComponent } from './grid-stack-item.component';
 declare var jQuery: any;
 declare var _: any;
 
